@@ -1,3 +1,5 @@
+import { config } from "next/dist/build/templates/pages";
+
 export const navOptions = [
   {
     id: "home",
@@ -35,7 +37,7 @@ export const adminNavOptions = [
   {
     id: "adminNewProduct",
     label: "Add New Product",
-    path: "/admin-view/add-product",
+    path: "/admin-view/add-products",
   },
 ];
 
@@ -188,17 +190,11 @@ export const AvailableSizes = [
   },
 ];
 
-export const firebaseConfig = {
-  apiKey: "API_KEY",
-  authDomain: "AUTH_DOMAIN",
-  projectId: "PROJECT_ID",
-  storageBucket: "STROAGE_BUCKET",
-  messagingSenderId: "MESSAGING_SENDER_ID",
-  appId: "APP_ID",
-  measurementId: "MEASUREMENT_ID",
-};
+// export const firebaseConfig = {
+//   "your Firebase config"
+// };
 
-export const firebaseStroageURL = "YOUR_FIREBASE_STROAGE_URL";
+export const firebaseStroageURL = "Your url";
 
 export const addNewAddressFormControls = [
   {
