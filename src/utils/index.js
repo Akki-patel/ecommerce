@@ -189,16 +189,10 @@ export const AvailableSizes = [
 ];
 
 export const firebaseConfig = {
-  apiKey: "AIzaSyCMfoyjTxhV_h9XZFeDN0Vi7deiFMUZQ0s",
-  authDomain: "next-js-e-commerce-2023.firebaseapp.com",
-  projectId: "next-js-e-commerce-2023",
-  storageBucket: "next-js-e-commerce-2023.appspot.com",
-  messagingSenderId: "315690931167",
-  appId: "1:315690931167:web:2f588e757810e6296daa6a",
-  measurementId: "G-1YX9BDX1HR"
+"add your firebase config
 };
 
-export const firebaseStroageURL = "gs://next-js-e-commerce-2023.appspot.com";
+export const firebaseStroageURL = "add your stotage url";
 
 export const addNewAddressFormControls = [
   {
