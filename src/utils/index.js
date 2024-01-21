@@ -1,5 +1,3 @@
-import { config } from "next/dist/build/templates/pages";
-
 export const navOptions = [
   {
     id: "home",
@@ -9,22 +7,22 @@ export const navOptions = [
   {
     id: "listing",
     label: "All Products",
-    path: "/product/listing/all-products",
+    path: "/Product/Listing/all-products",
   },
   {
     id: "listingMen",
     label: "Men",
-    path: "/product/listing/men",
+    path: "/Product/Listing/men",
   },
   {
     id: "listingWomen",
     label: "Women",
-    path: "/product/listing/women",
+    path: "/Product/Listing/women",
   },
   {
     id: "listingKids",
     label: "kids",
-    path: "/product/listing/kids",
+    path: "/Product/Listing/kids",
   },
 ];
 
@@ -190,11 +188,17 @@ export const AvailableSizes = [
   },
 ];
 
-// export const firebaseConfig = {
-//   "your Firebase config"
-// };
+export const firebaseConfig = {
+  apiKey: "AIzaSyCMfoyjTxhV_h9XZFeDN0Vi7deiFMUZQ0s",
+  authDomain: "next-js-e-commerce-2023.firebaseapp.com",
+  projectId: "next-js-e-commerce-2023",
+  storageBucket: "next-js-e-commerce-2023.appspot.com",
+  messagingSenderId: "315690931167",
+  appId: "1:315690931167:web:2f588e757810e6296daa6a",
+  measurementId: "G-1YX9BDX1HR"
+};
 
-export const firebaseStroageURL = "Your url";
+export const firebaseStroageURL = "gs://next-js-e-commerce-2023.appspot.com";
 
 export const addNewAddressFormControls = [
   {

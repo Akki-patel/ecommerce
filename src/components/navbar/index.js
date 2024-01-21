@@ -6,7 +6,7 @@ import { Fragment, useContext, useEffect } from "react";
 import CommonModal from "../CommonModel";
 import Cookies from "js-cookie";
 import { usePathname, useRouter } from "next/navigation";
-
+import CartModal from "../CartModel";
 function NavItems({ isModelView = false, isAdminview, router }) {
   return (
     <div
@@ -50,6 +50,8 @@ export default function NavBar() {
     setUser,
     currentUpdatedProduct,
     setCurrentUpdatedProduct,
+    showCartModal,
+    setShowCartModal,
   } = useContext(GlobalContext);
   const pathName = usePathname();
   const router = useRouter();
@@ -62,7 +64,7 @@ export default function NavBar() {
     )
       setCurrentUpdatedProduct(null);
   }, [pathName]);
-  
+
   function handleLogout() {
     setIsAuthUser(false);
     setUser(null);
@@ -87,6 +89,7 @@ export default function NavBar() {
             {!isAdminview && isAuthUser ? (
               <Fragment>
                 <button
+                  onClick={() => router.push("/Account")}
                   className={
                     "mt-1.5 inline-block bg-black px-5 py-3 text-xs font-medium upprcase tracking-wide text-white"
                   }
@@ -94,6 +97,7 @@ export default function NavBar() {
                   Account
                 </button>
                 <button
+                  onClick={() => setShowCartModal(true)}
                   className={
                     "mt-1.5 inline-block bg-black px-5 py-3 text-xs font-medium upprcase tracking-wide text-white"
                   }
@@ -170,8 +174,6 @@ export default function NavBar() {
         </div>
       </nav>
       <CommonModal
-        show={ShowNavModal}
-        setShow={setShowNavModal}
         showModalTitle={false}
         mainContent={
           <NavItems
@@ -180,7 +182,10 @@ export default function NavBar() {
             router={router}
           />
         }
+        show={ShowNavModal}
+        setShow={setShowNavModal}
       />
+      {showCartModal && <CartModal />}
     </>
   );
 }

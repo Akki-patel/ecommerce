@@ -2,7 +2,7 @@
 
 import ComponentLevelLoader from "@/components/Loader/comonlevel";
 import { GlobalContext } from "@/context";
-// import { addToCart } from "@/services/cart";
+import { addToCart } from "@/services/cart";
 import { deleteAProduct } from "@/services/product";
 import { usePathname, useRouter } from "next/navigation";
 import { useContext } from "react";
@@ -15,7 +15,7 @@ export default function ProductButton({ item }) {
     setComponentLevelLoader,
     componentLevelLoader,
     user,
-    // showCartModal, setShowCartModal
+    showCartModal, setShowCartModal
   } = useContext(GlobalContext);
   const router = useRouter();
 
@@ -25,7 +25,7 @@ export default function ProductButton({ item }) {
     setComponentLevelLoader({ loading: true, id: item._id });
 
     const res = await deleteAProduct(item._id);
-    console.log("Response:", res);  
+
     if (res.success) {
       setComponentLevelLoader({ loading: false, id: "" });
       toast.success(res.message, {
@@ -67,7 +67,7 @@ export default function ProductButton({ item }) {
       <button
         onClick={() => {
           setCurrentUpdatedProduct(item);
-          router.push("/admin-view/add-products");
+          router.push("/admin-view/add-product");
         }}
         className="mt-1.5 flex w-full justify-center bg-black px-5 py-3 text-xs font-medium uppercase tracking-wide text-white"
       >
@@ -92,7 +92,7 @@ export default function ProductButton({ item }) {
     </>
   ) : (
     <>
-      {/* <button
+      <button
         onClick={() => handleAddToCart(item)}
         className="mt-1.5 flex w-full justify-center bg-black px-5 py-3 text-xs font-medium uppercase tracking-wide text-white"
       >
@@ -107,7 +107,7 @@ export default function ProductButton({ item }) {
         ) : (
           "Add To Cart"
         )}
-      </button> */}
+      </button>
     </>
   );
 }
