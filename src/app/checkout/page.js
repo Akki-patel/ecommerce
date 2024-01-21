@@ -29,7 +29,7 @@ export default function Checkout() {
   const params = useSearchParams();
 
   const publishableKey =
-    "pk_test_51OXcm0SHLexfwStMltFlXIJrB2hsFh76yhFnp74UfhThvruVBTOzwjjKiBMIXQJwEO7vLci30TrTbtBfxaorIn8X00u8CJ8Ei5";
+    "add your public stripe key";
 
   const stripePromise = loadStripe(publishableKey);
 
